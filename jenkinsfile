@@ -1,16 +1,20 @@
 pipeline {
     agent none
+
     stages{
         stage('git'){
-            git branch: 'main', url: 'https://github.com/Rajendra-Gunda/cloud.git'
+            
+            steps {git branch: 'main', url: 'https://github.com/Rajendra-Gunda/cloud.git'}
         }
+
         stage('jenkins_sync'){
             
             agent{
                 label "jenkins"
             }
-            
+            steps {
             sh 'rsync -avh /var/lib/jenkins/workspace/cloudknowledge/Dockerfile jenkins@10.1.1.11:/opt'
+            }
         }
     }
 }
