@@ -1,6 +1,5 @@
 pipeline {
-    agent none
-
+    agent jenkins
     stages{
         stage('git'){
             
