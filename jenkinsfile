@@ -12,7 +12,7 @@ pipeline {
                 label "jenkins"
             }
             steps {
-            sh 'rsync -avh /var/lib/jenkins/workspace/cloudknowledge/Dockerfile jenkins@10.1.1.11:/opt'
+            sh 'rsync -avh /var/lib/jenkins/workspace/cloud/jenkinsfile jenkins@172.31.7.165:/opt'
             }
         }
     }
