@@ -1,10 +1,10 @@
 pipeline {
     agent none
     stages{
-        stage(git){
+        stage('git'){
             git branch: 'main', url: 'https://github.com/Rajendra-Gunda/cloud.git'
         }
-        stage(jenkins_sync){
+        stage('jenkins_sync'){
             
             agent{
                 label "jenkins"
